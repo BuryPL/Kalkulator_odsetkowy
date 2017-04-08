@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
-<!--    <link href="index.css" rel="stylesheet" type="text/css" />-->
-  </head>
-  <body>
-    <header id="main_header">
-      <h1 id="tytul">Kalkulator</h1>
-    </header>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Wprowadź dane</h1>
     <form id="main_form">
-      <label for="input_math">Wprowadź działanie</label>
-      <input type="text" name="input_field" id="input_math">
-      <input type="button" id="equals" onclick="kalkulator()" value="=">
-      <p id="answer"></p>
+        <label for="wplata">Wpłata w PLN:</label>
+        <input type="number" name="wplata" id="wplata" min="100" value="0"><br>
+        <label for="okres_kapitalizacji">Częstotliwość kapitalizacji</label>
+        <select name="okres_kapitalizacji" id="okres_kapitalizacji">
+            <option value="12">Miesięcznie</option>
+            <option value="4">Kwartalnie</option>
+            <option value="1" selected>Rocznie</option>   
+        </select><br>
+        <label for="ilosc_lat">Ilość lat:</label>
+        <input type="number" name="ilosc_lat" id="ilosc_lat" min="1" value="1"><br>
+        <label for="oprocentowanie">Stopa zwrotu w %:</label>
+        <input type="number" name="oprocentowanie" id="oprocentowanie" min="0" value="10"><br>
+        <label for="podatek">Uwzględnij podatek Belki 19%:</label>
+        <input type="checkbox" name="podatek" id="podatek"><br>
+        <button type="button" onclick="oblicz()">Oblicz</button>
     </form>
+    <p id="wynik"></p>
     <script src="js/main.js"></script>
-  </body>
+</body>
+
 </html>
