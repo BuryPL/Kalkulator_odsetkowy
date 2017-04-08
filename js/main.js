@@ -6,9 +6,8 @@ function obliczZysk(wplata,iloscLat,okresKapitalizacji, oprocentowanie, podatek)
     }else{
         var oprocentowanieOpodatkowane = oprocentowanie;
     }
-    var kapital = wplata*Math.pow(1+(oprocentowanieOpodatkowane/okresKapitalizacji),(iloscLat*okresKapitalizacji));
-//    return (parseFloat("kapital").toFixed(2));
-    return kapital;
+    var kapital = wplata*Math.pow(1+(oprocentowanieOpodatkowane/okresKapitalizacji),iloscLat*okresKapitalizacji);
+    return parseFloat(kapital).toFixed(2);
 }
 
 function oblicz() {
